@@ -1,0 +1,2342 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     90170,       2334]
+NotebookOptionsPosition[     65941,       1918]
+NotebookOutlinePosition[     71498,       2019]
+CellTagsIndexPosition[     71419,       2014]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["", "SlideShowNavigationBar", "FirstSlide",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"ae861ed8-5fa1-4088-84fd-2651cc7b368a"],
+
+Cell["Introdu\[CCedilla]\[ATilde]o \[AGrave] F\[IAcute]sica Computacional I \
+(2023.2)", "Title",
+ CellChangeTimes->{
+  3.559948400406288*^9, {3.699269571766136*^9, 3.699269573578824*^9}, {
+   3.7099080105038958`*^9, 3.7099080108133383`*^9}, {3.727189496068931*^9, 
+   3.7271894962748613`*^9}, {3.83932299294512*^9, 3.839323000605739*^9}, {
+   3.871719511642775*^9, 3.871719511757586*^9}, {3.901795969650283*^9, 
+   3.901795969785667*^9}},ExpressionUUID->"92508663-47f1-4deb-9615-\
+d2c271e8e453"],
+
+Cell["\<\
+Aula 3: listas; fun\[CCedilla]\[OTilde]es de itera\[CCedilla]\[ATilde]o; la\
+\[CCedilla]os; vetores e matrizes; fun\[CCedilla]\[OTilde]es e listas\
+\>", "Subtitle",
+ CellChangeTimes->{{3.699269582406044*^9, 3.699269584285553*^9}, {
+   3.8393232649484053`*^9, 3.839323284264048*^9}, 3.840031268565436*^9, {
+   3.871722999773328*^9, 
+   3.871723005565975*^9}},ExpressionUUID->"14f8f51b-58e9-4033-aea1-\
+fd611ac95bb9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"ee3ea2a1-973b-4e9a-a704-0d8a3c30d1be"],
+
+Cell[CellGroupData[{
+
+Cell["Listas", "Section",
+ CellChangeTimes->{
+  3.699269664116198*^9, 3.70454748091461*^9, {3.704547516075143*^9, 
+   3.7045475190812902`*^9}, {3.706294276733098*^9, 3.706294304716371*^9}, {
+   3.839323324298633*^9, 3.839323331059084*^9}, 
+   3.840031288455207*^9},ExpressionUUID->"7da6da63-6378-4f26-b58d-\
+d42a7250afa4"],
+
+Cell[TextData[{
+ "Tanto na linguagem Wolfram quanto em v\[AAcute]rias outras linguagens de \
+programa\[CCedilla]\[ATilde]o, como Python, uma forma b\[AAcute]sica de \
+colecionar objetos (n\[UAcute]meros, vari\[AAcute]veis, atribui\[CCedilla]\
+\[OTilde]es tempor\[AAcute]rias etc.) s\[ATilde]o as ",
+ StyleBox["listas",
+  FontWeight->"Bold"],
+ ". No Mathematica, listas s\[ATilde]o delimitadas por chaves, como \
+j\[AAcute] mencionamos na aula passada."
+}], "Text",
+ CellChangeTimes->{{3.6992696952616243`*^9, 3.6992696957779827`*^9}, {
+   3.704547416597644*^9, 3.704547418388081*^9}, {3.8393233348613234`*^9, 
+   3.839323366214238*^9}, {3.839323576559081*^9, 3.839323576563138*^9}, 
+   3.840031301280365*^9},ExpressionUUID->"3b730a40-c305-44bd-95b8-\
+df5440115120"],
+
+Cell[BoxData[
+ RowBox[{"lista1", "=", 
+  RowBox[{"{", 
+   RowBox[{"4", ",", "3", ",", "2", ",", "1", ",", "a", ",", "b", ",", "c"}], 
+   "}"}], " "}]], "Input",
+ CellChangeTimes->{{3.8393233792138987`*^9, 3.839323434535883*^9}, {
+   3.8399466708329887`*^9, 3.839946689620202*^9}, {3.83994686319759*^9, 
+   3.839946864007373*^9}, {3.839948474270892*^9, 3.8399484772573566`*^9}, 
+   3.8720167620316334`*^9},ExpressionUUID->"a9b1250e-20d4-4d04-bb61-\
+89aa77db592b"],
+
+Cell[BoxData[
+ RowBox[{"lista2", "=", 
+  RowBox[{"{", 
+   RowBox[{"a", ",", "x", ",", "y"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.839947301413373*^9, 3.839947311139803*^9}, 
+   3.84061327554305*^9},ExpressionUUID->"aedb5a5b-0854-422d-9281-\
+f487a24fc1c9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"lista3", "=", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "4", ",", "9", ",", "16"}], "}"}]}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.8393234387141542`*^9, 3.839323469410859*^9}, {
+   3.839946846558092*^9, 3.839946871094206*^9}, {3.839947299889804*^9, 
+   3.839947314537187*^9}, 3.839947443372882*^9, 
+   3.840613272967566*^9},ExpressionUUID->"1e47d30d-1932-4b27-8f7c-\
+b4aaac1204b9"],
+
+Cell[TextData[{
+ "Existem ",
+ ButtonBox["muitas fun\[CCedilla]\[OTilde]es intr\[IAcute]nsecas",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/guide/ListManipulation.html"],
+     None},
+  ButtonNote->
+   "https://reference.wolfram.com/language/guide/ListManipulation.html"],
+ " para manipular listas, algumas das quais discutiremos a seguir."
+}], "Text",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.840044073480595*^9, 3.840044115163506*^9}, 
+   3.840282414302183*^9},ExpressionUUID->"d8dab926-6edc-47d1-bc3b-\
+ea9c86c1ff65"]
+}, Closed]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"40542b3b-2488-406e-bc0d-1c1e5726d1cc"],
+
+Cell[TextData[{
+ "A fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Join",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Join.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Join.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " cria uma \[UAcute]nica lista combinando duas ou mais listas:"
+}], "Text",
+ CellChangeTimes->{
+  3.840031463500105*^9, {3.8717195623307037`*^9, 
+   3.8717195623359632`*^9}},ExpressionUUID->"4a7d6715-a466-4e21-8adc-\
+bdb5216bcdcb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Join", "[", 
+   RowBox[{"lista1", ",", "lista2", ",", "lista3"}], "]"}], " "}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.8399474987169037`*^9, 3.8399475049563704`*^9}, 
+   3.840004376106564*^9, 
+   3.872016757170786*^9},ExpressionUUID->"db1e2bef-52ed-48a0-8e22-\
+56eb81f795df"],
+
+Cell[TextData[{
+ "Note que os elementos duplicados ",
+ StyleBox["n\[ATilde]o",
+  FontWeight->"Bold",
+  FontColor:>Dynamic[
+    CurrentValue[{StyleHints, "ColorSet", "Display1"}]]],
+ " s\[ATilde]o removidos pela fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Join",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Join.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Join.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ ". Caso queira fazer isso, gerando uma lista ordenada, use a fun\[CCedilla]\
+\[ATilde]o ",
+ StyleBox[ButtonBox["Union",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Union.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Union.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ ":"
+}], "Text",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{
+  3.840031491344083*^9, 3.84004414166656*^9, {3.871719583965376*^9, 
+   3.871719599902495*^9}},ExpressionUUID->"1a90e685-c97d-4c8e-83d6-\
+53be1193f576"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Union", "[", 
+   RowBox[{"lista1", ",", "lista2", ",", "lista3"}], "]"}], " "}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.839947597488975*^9, 3.839947599164468*^9}, 
+   3.840004376109756*^9, 
+   3.8720167703468013`*^9},ExpressionUUID->"7b192a28-e455-45c2-a6b8-\
+f81a2f78b113"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"ab866131-6854-4e34-a1df-4a9cef6819a8"],
+
+Cell[TextData[{
+ "A fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Intersection",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Intersection.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Intersection.html"],
+  
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " retorna uma lista ordenada de elementos que s\[ATilde]o comuns a todas as \
+listas utilizadas como argumentos:"
+}], "Text",
+ CellChangeTimes->{
+  3.6992697457019463`*^9, 3.6992698838436613`*^9, {3.70454744273073*^9, 
+   3.704547443267602*^9}, {3.8393241276946487`*^9, 3.839324197837492*^9}, {
+   3.8393248302085047`*^9, 3.839324831309167*^9}, 3.8400315957219954`*^9, {
+   3.840282460743787*^9, 3.840282468101787*^9}, {3.871719621527217*^9, 
+   3.871719621537778*^9}},ExpressionUUID->"f302a702-6fbf-4a7c-a457-\
+bc03af4e051e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Intersection", "[", 
+   RowBox[{"lista1", ",", "lista2"}], "]"}], " "}]], "Input",
+ CellChangeTimes->{{3.839947770654435*^9, 3.839947776386877*^9}, 
+   3.8720167548983393`*^9},ExpressionUUID->"4729a16b-4ccf-4eac-a589-\
+428be96921c2"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Intersection", "[", 
+   RowBox[{"lista1", ",", "lista3"}], "]"}], " "}]], "Input",
+ CellChangeTimes->{{3.839947788988316*^9, 3.839947789045019*^9}, 
+   3.8720167517829437`*^9},ExpressionUUID->"4aeb8097-a488-4160-be73-\
+7743f9cf9dd8"],
+
+Cell[BoxData[
+ RowBox[{"Intersection", "[", 
+  RowBox[{"lista1", ",", "lista2", ",", "lista3"}], "]"}]], "Input",
+ CellChangeTimes->{{3.839947800452568*^9, 3.839947805241673*^9}, {
+  3.8402824825500097`*^9, 
+  3.840282483581689*^9}},ExpressionUUID->"1cf31aaa-bb35-49c2-a6d5-\
+ec583bd898da"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"a9293dc0-a2a2-41d7-a17f-f7683ae167d3"],
+
+Cell["\<\
+Uma lista pode conter elementos que s\[ATilde]o eles pr\[OAcute]prios outras \
+listas:\
+\>", "Text",
+ CellChangeTimes->{{3.839324772370719*^9, 3.839324875848732*^9}, 
+   3.840031639282476*^9},ExpressionUUID->"d9dc2b1f-4946-4194-956e-\
+e065020159d4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"lista4", "=", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "3", ",", "5", ",", "7", ",", "lista2"}], "}"}], 
+  " "}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.8399478749091167`*^9, 3.839947889720065*^9}, 
+   3.839948550121977*^9, 
+   3.872016705070368*^9},ExpressionUUID->"673f3060-48f0-40fa-8419-\
+21ae6e02d042"],
+
+Cell[TextData[{
+ "Note que, na cria\[CCedilla]\[ATilde]o da ",
+ StyleBox["lista4",
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ ", as chaves presentes na ",
+ StyleBox["lista2",
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " n\[ATilde]o s\[ATilde]o removidas. Caso queira remov\[EHat]-las (o que vai \
+ser importante, por exemplo, para fazer gr\[AAcute]ficos), use a fun\
+\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Flatten",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Flatten.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Flatten.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ ":"
+}], "Text",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{
+  3.840031660410069*^9, 3.8400441850446873`*^9, {3.871719676767867*^9, 
+   3.8717196767730722`*^9}},ExpressionUUID->"35136916-8a3a-47d0-aecb-\
+aa522a644e23"],
+
+Cell[BoxData[
+ RowBox[{"Flatten", "[", "lista4", "]"}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.839948021360161*^9, 3.839948026779911*^9}, 
+   3.83994855012414*^9},
+ CellLabel->"In[11]:=",ExpressionUUID->"6a7cc8f8-6918-459a-9d4f-863ed1f46c62"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"04dc39ac-49b4-4583-b876-d13d47c8024d"],
+
+Cell[TextData[{
+ "A fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["AppendTo",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/AppendTo.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/AppendTo.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " adiciona elementos a uma lista:"
+}], "Text",
+ CellChangeTimes->{{3.839325029861676*^9, 3.8393250686734667`*^9}, 
+   3.840031700437223*^9, {3.8717197012326117`*^9, 
+   3.8717197012443457`*^9}},ExpressionUUID->"7b8928b2-a6f1-4b41-a057-\
+6edb6599b9f4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"lista5", "=", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "3", ",", "5", ",", "7"}], "}"}]}], ";"}], 
+  " "}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.839948684376543*^9, 3.839948705782979*^9}, 
+   3.840006465930098*^9, 
+   3.8720166997906923`*^9},ExpressionUUID->"c4f246cf-d829-4832-8035-\
+9ea5a3b465b2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"AppendTo", "[", 
+   RowBox[{"lista5", ",", "9"}], "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "O", " ", "segundo", " ", "argumento", " ", "\[EAcute]", " ", "o", " ", 
+    "elemento", " ", "a", " ", "adicionar"}], " ", "*)"}], " "}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10001.},
+ CellChangeTimes->{{3.8399486491730747`*^9, 3.839948659384417*^9}, {
+   3.839948696111059*^9, 3.8399486973180943`*^9}, {3.839948743638294*^9, 
+   3.839948756302104*^9}, {3.840006465930944*^9, 3.840006480263687*^9}, 
+   3.8720167022075195`*^9},ExpressionUUID->"a1176aa9-e8aa-4b34-9b24-\
+2edb83725d48"],
+
+Cell[TextData[{
+ "Note que a ",
+ StyleBox["lista5",
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " foi alterada:"
+}], "Text",
+ CellGroupingRules->{"GroupTogetherGrouping", 10001.},
+ CellChangeTimes->{3.840031742174954*^9, 
+  3.8402825158711567`*^9},ExpressionUUID->"e4999ce8-8ca1-4cc2-9179-\
+ee4bae12ee61"],
+
+Cell[BoxData[
+ RowBox[{"lista5", " "}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10001.},
+ CellChangeTimes->{{3.83994896109901*^9, 3.839948961716954*^9}, {
+   3.84000646593287*^9, 3.840006480265594*^9}, 
+   3.8720167444284973`*^9},ExpressionUUID->"48b7b49f-a438-4831-aa4a-\
+28f4059663b3"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"53cf55d8-a27b-4a57-afc5-7769ff8f849c"],
+
+Cell[TextData[{
+ "A fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Drop",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Drop.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Drop.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " retira elementos de uma lista:"
+}], "Text",
+ CellChangeTimes->{
+  3.840031791360311*^9, {3.8717197359627857`*^9, 
+   3.871719735968478*^9}},ExpressionUUID->"1774fd2a-9936-4ef6-a0e6-\
+4c058641cc19"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Drop", "[", 
+   RowBox[{"lista5", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2"}], "}"}]}], "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "O", " ", "segundo", " ", "argumento", " ", "indica", "  ", "as", " ", 
+    StyleBox[
+     RowBox[{
+      StyleBox["posi\[CCedilla]",
+       FontWeight->"Bold"], "\[OTilde]es"}]], " ", "do", " ", "primeiro", " ",
+     "e", " ", "do", " ", "\[UAcute]ltimo", " ", "elemento", " ", "a", " ", 
+    "remover"}], " ", "*)"}]}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.839948731084609*^9, 3.839948779421096*^9}, 
+   3.839950063306912*^9, {3.8399501121500797`*^9, 3.839950175507805*^9}, 
+   3.840004792539662*^9, 
+   3.872016708337803*^9},ExpressionUUID->"e80fb665-2314-44b8-977c-\
+ae800760a936"],
+
+Cell[TextData[{
+ StyleBox["Aten\[CCedilla]\[ATilde]o",
+  FontWeight->"Bold",
+  FontColor:>Dynamic[
+    CurrentValue[{StyleHints, "ColorSet", "Display1"}]]],
+ ": a linguagem Wolfram utiliza ",
+ StyleBox["1",
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " (e n\[ATilde]o ",
+ StyleBox["0",
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ ") para rotular a posi\[CCedilla]\[ATilde]o do primeiro elemento."
+}], "ItemParagraph",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{
+  3.840031825369363*^9, 3.840032078759151*^9, {3.9018693908981533`*^9, 
+   3.9018693952567525`*^9}},ExpressionUUID->"c419bb64-6a01-4660-88dd-\
+774338f5d38d"],
+
+Cell[TextData[{
+ "Note que a ",
+ StyleBox["lista5",
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " ",
+ StyleBox["n\[ATilde]o",
+  FontWeight->"Bold",
+  FontColor:>Dynamic[
+    CurrentValue[{StyleHints, "ColorSet", "Display1"}]]],
+ " foi alterada:"
+}], "Text",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{3.8400318393414507`*^9, 
+  3.8400320787609873`*^9},ExpressionUUID->"f6c7261b-5f56-45bc-8054-\
+fbe257e71282"],
+
+Cell[BoxData["lista5"], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.8400319524138613`*^9, 3.840031953100618*^9}, 
+   3.8400320787626133`*^9},ExpressionUUID->"5b33e337-b4ea-4d2f-9b84-\
+0de44021164b"],
+
+Cell["Se quiser fazer isso, utilize a atualiza\[CCedilla]\[ATilde]o", "Text",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.840031980754211*^9, 3.840031997335692*^9}, 
+   3.840032078764207*^9},ExpressionUUID->"d088e9c0-c026-49c2-bbeb-\
+73624915dc02"],
+
+Cell[BoxData[
+ RowBox[{"lista5", "=", 
+  RowBox[{"Drop", "[", 
+   RowBox[{"lista5", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2"}], "}"}]}], "]"}]}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{
+  3.840032078765402*^9},ExpressionUUID->"01523872-cece-40a2-b665-\
+190f4deace24"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"f28f5531-acc2-4171-83c4-c62c7c9a4661"],
+
+Cell[TextData[{
+ "Note que ",
+ StyleBox[ButtonBox["Drop",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Drop.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Drop.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " funciona com base nas posi\[CCedilla]\[OTilde]es e n\[ATilde]o nos valores \
+dos elementos. Caso queira descobrir todas as posi\[CCedilla]\[OTilde]es de \
+uma lista que cont\[EHat]m um determinado elemento, utilize a fun\[CCedilla]\
+\[ATilde]o ",
+ StyleBox[ButtonBox["Position",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Position.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Position.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.840282715536654*^9, 3.840282771088545*^9}, {
+  3.8717197749925117`*^9, 
+  3.871719787898571*^9}},ExpressionUUID->"8c455970-6cb0-42ab-a48a-\
+e45903e5d513"],
+
+Cell[BoxData[
+ RowBox[{"Position", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "1", ",", "3", ",", "1", ",", "4"}], "}"}], 
+   ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.840282820373107*^9, 3.840282844565185*^9}},
+ CellLabel->"",ExpressionUUID->"6852cd38-8c1a-4808-b78b-48b73db2d276"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"9711ac4c-53d8-4ca4-b78f-fa198caf9c15"],
+
+Cell[TextData[{
+ "Para exibir elementos de uma lista, utilize a fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Part",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Part.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Part.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ ", que tem a alternativa compacta ",
+ StyleBox["[[]]",
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ ", conforme os exemplos a seguir:"
+}], "Text",
+ CellChangeTimes->{{3.839325683990046*^9, 3.8393257290569344`*^9}, {
+   3.8393258575447206`*^9, 3.839325867950495*^9}, 3.840032124777896*^9, {
+   3.840282687130163*^9, 3.8402826890867*^9}, {3.871719815996043*^9, 
+   3.871719816002357*^9}},ExpressionUUID->"f55b8e52-9d74-4c44-b99b-\
+65f8fce977cc"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"lista6", "=", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "3", ",", "5", ",", "7", ",", "9"}], "}"}]}], ";"}], 
+  " "}]], "Input",
+ CellChangeTimes->{{3.8399510732036963`*^9, 3.839951073475775*^9}, {
+   3.840006296174663*^9, 3.840006296275859*^9}, 
+   3.872016779957712*^9},ExpressionUUID->"535816cf-11d5-4dca-aea3-\
+e51cec9e9621"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"lista6", "[", 
+   RowBox[{"[", "3", "]"}], "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Fornece", " ", "o", " ", "terceiro", " ", "elemento", " ", "da", " ", 
+    StyleBox["lista6",
+     FontWeight->"Bold"]}], "  ", "*)"}]}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.839951075616972*^9, 3.839951095219396*^9}, 
+   3.8400048246340857`*^9, {3.840006035890143*^9, 3.8400060591625223`*^9}, {
+   3.84000629927847*^9, 
+   3.84000633831032*^9}},ExpressionUUID->"8eff1f02-fac8-4fa1-963e-\
+e2cfc5fcd49f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"lista6", "[", 
+   RowBox[{"[", 
+    RowBox[{"2", ";;", "4"}], "]"}], "]"}], "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Fornece", " ", "uma", " ", "lista", " ", "contendo", " ", "os", " ", 
+    "elementos", " ", "nas", " ", "posi\[CCedilla]\[OTilde]es", " ", "2", " ",
+     "a", " ", "4", " ", "da", " ", 
+    StyleBox["lista6",
+     FontWeight->"Bold"]}], " ", "*)"}]}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.839951097352625*^9, 3.839951097998856*^9}, 
+   3.840004824636243*^9, {3.8400060852658873`*^9, 3.840006085409359*^9}, {
+   3.8400062196902943`*^9, 3.840006222288196*^9}, {3.840006303665534*^9, 
+   3.840006347152052*^9}, {3.840615438995513*^9, 
+   3.8406154415246964`*^9}},ExpressionUUID->"54917961-f668-4daa-a0f6-\
+757035f4e6dd"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"lista6", "[", 
+   RowBox[{"[", 
+    RowBox[{"-", "2"}], "]"}], "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Fornece", " ", "o", " ", "pen\[UAcute]ltimo", " ", "elemento", " ", "da", 
+    " ", 
+    StyleBox["lista6",
+     FontWeight->"Bold"]}], " ", "*)"}]}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.840016804939494*^9, 3.8400168277750597`*^9}, 
+   3.84003218231534*^9},
+ CellLabel->"",ExpressionUUID->"269c50a1-0381-40c6-a08a-1c1ef4f1b4fc"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"f1ea6945-699f-482b-8fd0-06e69f1653cb"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Uma forma conveniente de armazenar dados experimentais (por exemplo, medidas \
+do comprimento de uma barra como fun\[CCedilla]\[ATilde]o da temperatura) \
+\[EAcute] por meio de uma lista de pares ordenados:\
+\>", "Text",
+ CellChangeTimes->{
+  3.840032214451294*^9},ExpressionUUID->"8978271e-60b4-4ccb-9eb2-\
+e76cf32b502a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"lista7", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"25", ",", "29.9"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"26", ",", "30.5"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"27", ",", "31.1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"28", ",", "31.5"}], "}"}]}], "}"}]}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.840012616356477*^9, 3.840012617709627*^9}, {
+   3.840012802256263*^9, 3.840012830560533*^9}, 3.840013259980907*^9, 
+   3.8400442623348*^9, 
+   3.840613359005849*^9},ExpressionUUID->"e6096ff5-ad18-48a9-a3c2-\
+ebefe4e2cd67"],
+
+Cell[TextData[{
+ "Em um lista de pares ordenados (um exemplo de uma \
+\[OpenCurlyDoubleQuote]lista de listas\[CloseCurlyDoubleQuote]), voc\[EHat] \
+pode utilizar ",
+ StyleBox[ButtonBox["Part",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Part.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Part.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " para exibir um elemento espec\[IAcute]fico de uma lista interna (aqui cada \
+par ordenado), indicando a posi\[CCedilla]\[ATilde]o dessa lista na lista \
+externa (aqui a ",
+ StyleBox["lista7",
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ ") e a posi\[CCedilla]\[ATilde]o do elemento na lista interna. Por exemplo, \
+para saber o segundo elemento no terceiro par ordenado da ",
+ StyleBox["lista7",
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ ":"
+}], "Text",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.9018699770177526`*^9, 3.901870060900222*^9}, {
+  3.9018701040072927`*^9, 
+  3.9018703320937552`*^9}},ExpressionUUID->"1a13b171-d51c-46d0-9ed7-\
+dd7b8d749028"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"lista7", "[", 
+  RowBox[{"[", 
+   RowBox[{"3", ",", "2"}], "]"}], "]"}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.901870335770408*^9, 
+  3.901870342348752*^9}},ExpressionUUID->"3437bb4f-4736-459d-b702-\
+e7c58737e48f"],
+
+Cell[TextData[{
+ "Caso queira produzir uma lista com os elementos na primeira posi\[CCedilla]\
+\[ATilde]o de cada lista interna, voc\[EHat] pode utilizar a especifica\
+\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["All",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/All.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/All.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.9018705305318937`*^9, 3.901870641554613*^9}, {
+  3.9018709865005865`*^9, 
+  3.901870995171256*^9}},ExpressionUUID->"54cfbb09-bfc2-42a8-9fb7-\
+675ce2ae9570"],
+
+Cell[BoxData[
+ RowBox[{"lista7", "[", 
+  RowBox[{"[", 
+   RowBox[{"All", ",", "1"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9018706493995533`*^9, 
+  3.901870655537119*^9}},ExpressionUUID->"a27bd5fc-8f08-4943-963e-\
+a23dc099ea37"]
+}, Closed]]
+}, Closed]]
+}, Open  ]]
+}, Open  ]],
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"1693437b-1d55-45b0-92c8-f9618c540d96"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Para fazer um gr\[AAcute]fico a partir de uma lista de pares ordenados, com \
+o primeiro elemento de um par fornecendo a abscissa e o segundo, a ordenada, \
+utilize a fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["ListPlot",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/ListPlot.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/ListPlot.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ ":"
+}], "Text",
+ CellChangeTimes->{
+  3.9018704856984425`*^9},ExpressionUUID->"92640c85-4011-4e1a-8a74-\
+069451750911"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", "lista7", "]"}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.8400129382881937`*^9, 3.84001294432224*^9}, 
+   3.840044262336257*^9},
+ CellLabel->"In[2]:=",ExpressionUUID->"7e0670d4-6a24-466e-8900-ab37fc929f95"],
+
+Cell[TextData[{
+ "Quando utilizada com uma lista simples, a fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["ListPlot",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/ListPlot.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/ListPlot.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " trata os elementos da lista como ordenadas e adota para as abscissas a \
+sequ\[EHat]ncia de n\[UAcute]meros naturais a partir do ",
+ StyleBox["1",
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.839326142025845*^9, 3.8393261550526876`*^9}, 
+   3.8400323575697527`*^9, {3.871719905412964*^9, 
+   3.871719905419051*^9}},ExpressionUUID->"9d257a98-cb04-47dd-b295-\
+11fbaf291911"],
+
+Cell[BoxData[
+ RowBox[{"lista6", " "}]], "Input",
+ CellChangeTimes->{{3.840013244188507*^9, 3.84001324612636*^9}, 
+   3.8720166904321175`*^9},ExpressionUUID->"9fdbbf8e-b968-4863-99e0-\
+a3dc9f0a3560"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ListPlot", "[", "lista6", "]"}], " "}]], "Input",
+ CellChangeTimes->{{3.8400132802335863`*^9, 3.84001328554725*^9}, 
+   3.8720166927620926`*^9},ExpressionUUID->"17a27e60-259a-48a4-9733-\
+443119421a02"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"d0653087-e6fc-4117-98fa-618b3d35e3ba"],
+
+Cell[CellGroupData[{
+
+Cell["Fun\[CCedilla]\[OTilde]es de itera\[CCedilla]\[ATilde]o e iteradores", \
+"Section",
+ CellChangeTimes->{
+  3.6992696669461823`*^9, 3.70454749050467*^9, {3.704547532369433*^9, 
+   3.704547533321432*^9}, {3.706294323875647*^9, 3.706294324495994*^9}, {
+   3.83933157455728*^9, 3.83933158456863*^9}, {3.840032432381852*^9, 
+   3.840032434721004*^9}, {3.8717199936993628`*^9, 3.871720000089073*^9}, 
+   3.871720038181871*^9, {3.871720179888234*^9, 
+   3.871720181788598*^9}},ExpressionUUID->"a6bca3fb-c161-4f12-a2a7-\
+035c628e3fe4"],
+
+Cell["\<\
+Fun\[CCedilla]\[OTilde]es de itera\[CCedilla]\[ATilde]o permitem repetir uma \
+opera\[CCedilla]\[ATilde]o, seja da mesma maneira ou de forma ligeiramente \
+diferente, e podem produzir listas como resultado. Vamos discutir algumas fun\
+\[CCedilla]\[OTilde]es de itera\[CCedilla]\[ATilde]o da linguagem Wolfram nos \
+exemplos a seguir.  \
+\>", "Text",
+ CellChangeTimes->{{3.839331597383399*^9, 3.8393316463877277`*^9}, 
+   3.8400324435310383`*^9, 3.87171998315837*^9, 3.871720024020192*^9, 
+   3.872016533797763*^9, 
+   3.8720166402982645`*^9},ExpressionUUID->"d8defd24-687d-4dd2-bb21-\
+118c0ff8990b"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"b9b3882f-e4b1-47bf-b75d-ae3241466e3b"],
+
+Cell[TextData[{
+ "A fun\[CCedilla]\[ATilde]o de itera\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Range",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Range.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Range.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " produz uma lista ordenada de n\[UAcute]meros:"
+}], "Text",
+ CellChangeTimes->{
+  3.840032484301386*^9, {3.8717200422093554`*^9, 
+   3.871720060668647*^9}},ExpressionUUID->"5e21bc77-62ba-4aba-aaee-\
+59922f2ca951"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Range", "[", "10", "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Produz", " ", "uma", " ", "lista", " ", "de", " ", "inteiros", " ", "de", 
+    " ", "1", " ", "at\[EAcute]", " ", "10"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.8400109015543623`*^9, 3.840010911544242*^9}, {
+  3.840011123058613*^9, 3.840011135387003*^9}},
+ CellLabel->"",ExpressionUUID->"b4e43561-3446-4ba9-9b74-2a031ffff604"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Range", "[", 
+   RowBox[{"5", ",", "10"}], "]"}], "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Produz", " ", "uma", " ", "lista", " ", "de", " ", "inteiros", " ", "de", 
+    " ", "5", " ", "at\[EAcute]", " ", "10"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.8400111165377398`*^9, 3.8400111441224623`*^9}},
+ CellLabel->"",ExpressionUUID->"5d2f10fc-b52b-4329-9741-e46c7195d60e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Range", "[", 
+   RowBox[{"10", ",", "5", ",", 
+    RowBox[{"-", "2"}]}], "]"}], "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "Produz", " ", "uma", " ", "lista", " ", "de", " ", "inteiros", " ", "de",
+      " ", "10", " ", "at\[EAcute]", " ", "5"}], ",", " ", 
+    RowBox[{
+     RowBox[{"com", " ", "incremento"}], " ", "-", "2"}]}], " ", 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{{3.840011771422583*^9, 3.8400117918749123`*^9}, {
+  3.8406051117039948`*^9, 
+  3.840605125988285*^9}},ExpressionUUID->"d24c3873-0043-41da-a3d7-\
+bbc349be5577"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Range", "[", 
+   RowBox[{"1", ",", "2", ",", "0.1"}], "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Produz", " ", "uma", " ", "lista", " ", "de", " ", "n\[UAcute]meros", " ",
+     "reais", " ", "de", " ", "1.0", " ", "at\[EAcute]", " ", "2.0", " ", 
+    "com", " ", "incremento", " ", "de", " ", "0.1"}], " ", "*)"}]}]], "Input",\
+
+ CellChangeTimes->{{3.840011152526215*^9, 3.8400111983085527`*^9}, {
+  3.840011785386812*^9, 
+  3.840011786947019*^9}},ExpressionUUID->"d798f8b7-7364-4349-86d3-\
+c1e7750f393d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"f7a40f71-7825-4488-8115-209fcc91b4c0"],
+
+Cell[TextData[{
+ "V\[AAcute]rias fun\[CCedilla]\[OTilde]es de itera\[CCedilla]\[ATilde]o \
+utilizam especificadores de itera\[CCedilla]\[ATilde]o, ou ",
+ StyleBox["iteradores",
+  FontWeight->"Bold"],
+ ", que tomam a forma de listas cujo primeiro elemento indica a \
+vari\[AAcute]vel cujo valor ser\[AAcute] iterado, ou de listas de 1 \
+\[UAcute]nico elemento constante. As fun\[CCedilla]\[OTilde]es a seguir \
+exemplificam o uso de iteradores.  "
+}], "Text",
+ CellChangeTimes->{
+  3.840042127451702*^9, {3.87172019317409*^9, 3.871720302356411*^9}, {
+   3.871720336939007*^9, 3.871720338569584*^9}, {3.871720788470831*^9, 
+   3.871720803883893*^9}},ExpressionUUID->"f5412697-fbe8-45f0-b8f6-\
+f8bb5e1b01e5"],
+
+Cell[TextData[{
+ "A fun\[CCedilla]\[ATilde]o de itera\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Table",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Table.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Table.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " produz uma lista segundo regras definidas pelos argumentos:"
+}], "Text",
+ CellChangeTimes->{{3.8717203283571157`*^9, 3.871720349190394*^9}, {
+  3.871720436413797*^9, 
+  3.871720436420307*^9}},ExpressionUUID->"e0ffc2f9-651b-44fb-8797-\
+f11184a03c6b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"2", "^", "n"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "4"}], "}"}]}], "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Produz", " ", "uma", " ", "lista", " ", "das", " ", "pot\[EHat]ncias", 
+    " ", "de", " ", "2", " ", "desde", " ", 
+    RowBox[{"1", "/", 
+     RowBox[{"2", "^", "1"}]}], " ", "at\[EAcute]", " ", 
+    RowBox[{"1", "/", 
+     RowBox[{"2", "^", "4."}]}], " ", "O", " ", "iterador", " ", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "4"}], "}"}], " ", "indica", " ", "que", " ", "n", " ",
+     "percorre", " ", "os", " ", "n\[UAcute]meros", " ", "inteiros", " ", 
+    "de", " ", "1", " ", "a", " ", "4."}], "  ", "*)"}]}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.840011400578352*^9, 3.840011446789537*^9}, {
+   3.840283008119191*^9, 3.840283009422172*^9}, 3.8717204721901608`*^9, {
+   3.871720620092957*^9, 3.871720668815432*^9}},
+ CellLabel->"",ExpressionUUID->"d485576f-0930-4518-b1e1-bd1be85bb11d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"3", "^", "n"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "0", ",", "4"}], "}"}]}], "]"}], "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Produz", " ", "uma", " ", "lista", " ", "das", " ", "pot\[EHat]ncias", 
+    " ", "de", " ", "3", " ", "desde", " ", 
+    RowBox[{"1", "/", 
+     RowBox[{"3", "^", "0"}]}], " ", "at\[EAcute]", " ", 
+    RowBox[{"1", "/", 
+     RowBox[{"3", "^", "4."}]}], " ", "O", " ", "iterador", " ", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "0", ",", "4"}], "}"}], " ", "indica", " ", "que", " ",
+     "n", " ", "percorre", " ", "os", " ", "n\[UAcute]meros", " ", "inteiros",
+     " ", "de", " ", "0", " ", "a", " ", "4."}], " ", "*)"}]}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.840011580204542*^9, 3.8400115964492073`*^9}, {
+  3.8400421805750837`*^9, 3.8400421837006407`*^9}, {3.840283013123541*^9, 
+  3.840283013764797*^9}, {3.8717204721925373`*^9, 3.871720548515572*^9}, {
+  3.871720672325502*^9, 3.87172069176598*^9}, {3.872016649029951*^9, 
+  3.872016651423744*^9}},ExpressionUUID->"f9fe9daf-9fef-428c-bc9b-\
+2f51b00736ac"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"2", "^", "n"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "0", ",", "7", ",", "3"}], "}"}]}], "]"}], "   ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "Produz", " ", "uma", " ", "lista", " ", "das", " ", "pot\[EHat]ncias", 
+     " ", "de", " ", "2", " ", "desde", " ", 
+     RowBox[{"1", "/", 
+      RowBox[{"2", "^", "0"}]}], " ", "at\[EAcute]", " ", 
+     RowBox[{"1", "/", 
+      RowBox[{"2", "^", "7"}]}]}], ",", " ", 
+    RowBox[{"com", " ", "incremento", " ", "3", " ", "na", " ", 
+     RowBox[{"pot\[EHat]ncia", ".", " ", "O"}], " ", "iterador", " ", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "0", ",", "7", ",", "3"}], "}"}], " ", "indica", " ", 
+     "que", " ", "n", " ", "percorre", " ", "os", " ", "n\[UAcute]meros", " ",
+      "inteiros", " ", "de", " ", "0", " ", "a", " ", "7"}], ",", " ", 
+    RowBox[{"de", " ", "3", " ", "em", " ", "3."}]}], " ", "*)"}]}]], "Input",\
+
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.8400116219884863`*^9, 3.84001165548975*^9}, {
+  3.8400116866650887`*^9, 3.840011689330738*^9}, {3.840283015881084*^9, 
+  3.840283016228346*^9}, {3.8406051821377687`*^9, 3.84060518505061*^9}, {
+  3.871720472193552*^9, 3.871720562457632*^9}, {3.8717206993725777`*^9, 
+  3.8717207543048277`*^9}},ExpressionUUID->"7d7accac-4b8f-48ee-a72f-\
+3b96b18c4a5c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{"b", ",", 
+    RowBox[{"{", "4", "}"}]}], "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "Produz", " ", "uma", " ", "lista", " ", "contendo", " ", "4", " ", 
+     "elementos", " ", "iguais", " ", 
+     RowBox[{"a", " ", "'"}], 
+     RowBox[{
+      RowBox[{"b", "'"}], ".", " ", "O"}], " ", "iterador", " ", 
+     RowBox[{"{", "4", "}"}], " ", "indica", " ", "que", " ", "ser\[ATilde]o",
+      " ", "produzidos", " ", "4", " ", "valores", " ", "iguais"}], ",", " ", 
+    
+    RowBox[{"nesse", " ", "caso"}], ",", " ", 
+    RowBox[{"ao", " ", "primeiro", " ", "argumento", " ", "de", " ", 
+     RowBox[{"Table", "."}]}]}], " ", "*)"}]}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.840011717393343*^9, 3.840011752837791*^9}, {
+   3.871720472194386*^9, 3.871720562458708*^9}, 3.871720771832733*^9, {
+   3.8717208139525414`*^9, 
+   3.871720853372799*^9}},ExpressionUUID->"495b5733-8723-4097-a1bc-\
+980e5866c261"]
+}, Closed]]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"e63b20c4-1ff6-4337-8aee-1cac34c53f10"],
+
+Cell[TextData[{
+ "Outra fun\[CCedilla]\[ATilde]o de itera\[CCedilla]\[ATilde]o \[UAcute]til \
+\[EAcute] a fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Do",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Do.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Do.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ ", cujo uso vamos ilustrar produzindo a sequ\[EHat]ncia dos ",
+ StyleBox["101",
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " primeiros n\[UAcute]meros de Fibonacci. Vamos defini-los como \
+\[OpenCurlyDoubleQuote]fun\[CCedilla]\[OTilde]es\[CloseCurlyDoubleQuote] que \
+existem apenas para certos valores (nesse caso, inteiros) do argumento, um \
+recurso do Mathematica que \[AGrave]s vezes \[EAcute] \[UAcute]til."
+}], "Text",
+ CellChangeTimes->{
+  3.840042213210535*^9, {3.840605207494125*^9, 3.840605207617632*^9}, {
+   3.871721670938032*^9, 
+   3.871721734815236*^9}},ExpressionUUID->"4885ce9f-7b8e-4c5d-abc0-\
+d7bbb2c37f97"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "[", "0", "]"}], "=", "1"}], ";"}], 
+  " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "1", "]"}], "=", "1"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8400172269917603`*^9, 3.8400172520510197`*^9}, {
+   3.840615214213789*^9, 3.84061521625706*^9}, 
+   3.871721754527472*^9},ExpressionUUID->"68eb5bb4-a227-4dce-a91d-\
+4e59b353be92"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Do", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", "k", "]"}], "=", 
+     RowBox[{
+      RowBox[{"f", "[", 
+       RowBox[{"k", "-", "1"}], "]"}], "+", 
+      RowBox[{"f", "[", 
+       RowBox[{"k", "-", "2"}], "]"}]}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"k", ",", "2", ",", "100"}], "}"}]}], "]"}], 
+  " "}], "\[IndentingNewLine]", 
+ RowBox[{"f", "[", "100", "]"}]}], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.8400170528031073`*^9, 3.840017053591732*^9}, {
+   3.840017261951564*^9, 3.840017296590558*^9}, 3.840042286549095*^9, {
+   3.8406133965030813`*^9, 3.840613399043603*^9}, {3.840615218103256*^9, 
+   3.8406152221300488`*^9}, {3.840615298080048*^9, 3.840615298224473*^9}, 
+   3.871721746033615*^9, 
+   3.9017976746995764`*^9},ExpressionUUID->"e12d619b-9cff-40cb-ab74-\
+00a6bb22e38f"],
+
+Cell[TextData[{
+ "A atribui\[CCedilla]\[ATilde]o no primeiro argumento da fun\[CCedilla]\
+\[ATilde]o ",
+ StyleBox[ButtonBox["Do",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Do.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Do.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " foi repetida para todos os valores de ",
+ StyleBox["k",
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " entre ",
+ StyleBox["2",
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " e ",
+ StyleBox["100",
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ ". N\[ATilde]o h\[AAcute] sa\[IAcute]da autom\[AAcute]tica de cada atribui\
+\[CCedilla]\[ATilde]o, mas \[EAcute] poss\[IAcute]vel visualizar os valores \
+atribu\[IAcute]dos com o aux\[IAcute]lio da fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Print",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Print.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Print.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ ":"
+}], "ItemParagraph",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{
+  3.840042248536221*^9, 3.840042286551423*^9, {3.871721764180335*^9, 
+   3.871721789132781*^9}, {3.9017976277755775`*^9, 
+   3.9017976299965773`*^9}},ExpressionUUID->"edb5a615-d88d-4835-b166-\
+0df77fe0d0ba"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Do", "[", 
+  RowBox[{
+   RowBox[{"Print", "[", 
+    RowBox[{"f", "[", "k", "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "8"}], "}"}]}], "]"}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.840017650888299*^9, 3.840017700391225*^9}, 
+   3.8400422865523663`*^9, {3.8406152279831123`*^9, 3.840615228036813*^9}, {
+   3.901795378822112*^9, 
+   3.901795382242399*^9}},ExpressionUUID->"b640c837-0a4e-4d4a-be09-\
+ece8ab19275a"],
+
+Cell[TextData[{
+ "A fun\[CCedilla]\[ATilde]o ",
+ StyleBox["Do",
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " implementa explicitamente uma estrutura de programa\[CCedilla]\[ATilde]o \
+conhecida como ",
+ StyleBox["la\[CCedilla]o",
+  FontWeight->"Bold"],
+ ", essencial na constru\[CCedilla]\[ATilde]o de algoritmos computacionais. \
+Voltaremos a discutir la\[CCedilla]os em aulas futuras."
+}], "Text",
+ CellMargins->
+  Dynamic[{{
+    0.185 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 
+     0.030000000000000002` FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+    0.0124074 FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 0.0124074 
+     FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}}],
+ CellChangeTimes->{
+  3.901796009188424*^9},ExpressionUUID->"53f4b14d-d1da-4b91-b31f-\
+ec7b538eec24"]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"7f136dcc-e255-42fb-a080-115e12cbce78"],
+
+Cell[TextData[{
+ "Se quisermos produzir uma lista a partir dos valores calculados para os n\
+\[UAcute]meros de Fibonacci, podemos utilizar a fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Table",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Table.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Table.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ ":"
+}], "Text",
+ CellChangeTimes->{
+  3.840042587364974*^9, {3.87172181539078*^9, 
+   3.871721815397396*^9}},ExpressionUUID->"58b37b08-3d11-4358-9dca-\
+88513d33d6ce"],
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"f", "[", "k", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "25"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.840017808941669*^9, 3.84001783273326*^9}, {
+  3.840023188205188*^9, 3.840023188268919*^9}, {3.8406152355550547`*^9, 
+  3.840615235606721*^9}},ExpressionUUID->"53037791-fda6-402d-b6d4-\
+703b455f10c6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"0a89f2e5-0f75-4692-a6f9-bf3cb9efa58a"],
+
+Cell[CellGroupData[{
+
+Cell["Fun\[CCedilla]\[OTilde]es e listas", "Section",
+ CellChangeTimes->{
+  3.6992696669461823`*^9, 3.70454749050467*^9, {3.704547532369433*^9, 
+   3.704547533321432*^9}, {3.7051902227930613`*^9, 3.705190225159531*^9}, {
+   3.70629432793958*^9, 3.706294328347148*^9}, {3.83933189760198*^9, 
+   3.839331902709022*^9}, {3.840042717566478*^9, 
+   3.840042719816044*^9}},ExpressionUUID->"12a70bd9-5934-43e6-bf39-\
+c62eaac3650c"],
+
+Cell["\<\
+A maioria das fun\[CCedilla]\[OTilde]es do Mathematica \[EAcute] \
+\[OpenCurlyDoubleQuote]list\[AAcute]vel\[CloseCurlyDoubleQuote], ou seja, \
+pode receber uma lista como argumento, devolvendo como resultado uma outra \
+lista contendo a aplica\[CCedilla]\[ATilde]o da fun\[CCedilla]\[ATilde]o \
+separadamente a cada elemento. Vejamos exemplos:\
+\>", "Text",
+ CellChangeTimes->{{3.8393319130039253`*^9, 3.8393319266716213`*^9}, 
+   3.840042730763721*^9},ExpressionUUID->"2f02ce05-f03d-45a2-bcf6-\
+fad8ed76da45"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3"}], "}"}], "+", "2", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Aplicando", " ", "a", " ", "fun\[CCedilla]\[ATilde]o", " ", "Plus"}], " ",
+    "*)"}]}]], "Input",
+ CellChangeTimes->{{3.8400256224445477`*^9, 
+  3.8400256344380207`*^9}},ExpressionUUID->"2b2a3f7a-6d5b-4362-a27d-\
+fa5545954bcb"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3"}], "}"}], "^", "3", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Aplicando", " ", "a", " ", "fun\[CCedilla]\[ATilde]o", " ", "Power"}], 
+   " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.8400256388559017`*^9, 
+  3.840025667694544*^9}},ExpressionUUID->"5c1e4508-2dd4-42fc-b251-\
+4aac743a1df3"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Sin", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\[Pi]", "/", "6"}], ",", 
+     RowBox[{"\[Pi]", "/", "4"}], ",", 
+     RowBox[{"\[Pi]", "/", "3"}], ",", 
+     RowBox[{"\[Pi]", "/", "2"}]}], "}"}], "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Aplicando", " ", "a", " ", "fun\[CCedilla]\[ATilde]o", " ", "seno"}], " ",
+    "*)"}]}]], "Input",
+ CellChangeTimes->{{3.84002566901896*^9, 
+  3.8400257044248743`*^9}},ExpressionUUID->"1036f4bc-c54c-4cf1-83df-\
+d2fd8973f0ea"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"1a320414-3134-4083-b988-ba3ab9227284"],
+
+Cell[TextData[{
+ "Fun\[CCedilla]\[OTilde]es definidas pelo usu\[AAcute]rio podem n\[ATilde]o \
+ser \[OpenCurlyDoubleQuote]list\[AAcute]veis\[CloseCurlyDoubleQuote]. Esse \
+\[EAcute] o caso da fun\[CCedilla]\[ATilde]o ",
+ StyleBox["f",
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " que definimos h\[AAcute] pouco:"
+}], "Text",
+ CellChangeTimes->{
+  3.8400427789929457`*^9, 3.901795493582163*^9, {3.901797456530238*^9, 
+   3.901797456816984*^9}},ExpressionUUID->"d079dabf-209c-4860-990a-\
+ba27dae614a7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"f", "[", 
+  RowBox[{"{", 
+   RowBox[{"9", ",", "10"}], "}"}], "]"}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{
+  3.8400428140023403`*^9, {3.9017974598618956`*^9, 
+   3.9017974600654488`*^9}},ExpressionUUID->"5efb9a28-4c6e-44a4-a118-\
+86d2add3f08c"],
+
+Cell[TextData[{
+ "Para esses casos, a fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Map",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Map.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Map.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " garante a aplica\[CCedilla]\[ATilde]o a cada elemento da lista \
+separadamente:"
+}], "Text",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.840042800896893*^9, 3.8400428140038347`*^9}, {
+  3.871722283045433*^9, 
+  3.871722283050881*^9}},ExpressionUUID->"43298964-dfbd-404e-b49b-\
+fde5d50b2f3f"],
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{"f", ",", 
+   RowBox[{"{", 
+    RowBox[{"9", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.840026422536971*^9, 3.840026450171879*^9}, {
+  3.901797463842876*^9, 
+  3.9017974640461473`*^9}},ExpressionUUID->"a0da835c-cf72-45a7-9952-\
+5ab22f92d245"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"f5df252d-5e49-4d42-8fb6-aa7a8acf2b21"],
+
+Cell[CellGroupData[{
+
+Cell["Vetores e matrizes", "Section",
+ CellChangeTimes->{{3.83933219158899*^9, 3.839332194242936*^9}, 
+   3.840042850250585*^9},ExpressionUUID->"f78330d5-f5c5-4e89-88d9-\
+d7f964eb0afe"],
+
+Cell["\<\
+No Mathematica, vetores e matrizes s\[ATilde]o definidos como listas. Um \
+vetor \[EAcute] definido como uma lista simples:\
+\>", "Text",
+ CellChangeTimes->{{3.839332209229011*^9, 3.839332282150674*^9}, 
+   3.840042858440913*^9},ExpressionUUID->"545eecb9-86d8-43e5-90c2-\
+de7056d59eab"],
+
+Cell[BoxData[
+ RowBox[{"vetor1", "=", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", 
+    RowBox[{"1", "/", "2"}], ",", "2"}], "}"}], " "}]], "Input",
+ CellChangeTimes->{{3.840027311309539*^9, 3.8400273373859673`*^9}, 
+   3.872016892197238*^9, 
+   3.901869428629906*^9},ExpressionUUID->"2a1b318f-5bde-4931-a1c4-\
+18d02e675e41"],
+
+Cell["\<\
+Uma matriz \[EAcute] definida como uma lista de listas, cada uma \
+representando uma linha da matriz:\
+\>", "Text",
+ CellChangeTimes->{{3.839332168542363*^9, 3.839332170179727*^9}, {
+   3.8393323029778023`*^9, 3.839332315586122*^9}, 
+   3.840042876789701*^9},ExpressionUUID->"a2371891-c298-4c8a-a7e3-\
+211142174686"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"matriz1", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0"}], "}"}]}], "}"}], " "}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.840027492894979*^9, 3.840027510861986*^9}, 
+   3.84002762690035*^9, 3.8720168944800606`*^9, 
+   3.901869431117255*^9},ExpressionUUID->"512b9b51-f125-45e3-8493-\
+0f1222b2cf08"],
+
+Cell[TextData[{
+ "Para visualizar esses objetos na forma usual, utilizamos a fun\[CCedilla]\
+\[ATilde]o ",
+ StyleBox[ButtonBox["MatrixForm",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/MatrixForm.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/MatrixForm.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ ":"
+}], "Text",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.8400429069858303`*^9, 3.840042935572134*^9}, {
+  3.8717223134679527`*^9, 
+  3.871722313473781*^9}},ExpressionUUID->"6527b7a4-71a6-4786-84e5-\
+2c2ec428ed4d"],
+
+Cell[BoxData[
+ RowBox[{"MatrixForm", "[", "vetor1", "]"}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.840027572907913*^9, 3.840027577002139*^9}, 
+   3.840027626903412*^9},
+ CellLabel->"In[7]:=",ExpressionUUID->"fa0f04b8-90e1-4eff-8c3a-2ab40fe1ef71"],
+
+Cell[BoxData[
+ RowBox[{"MatrixForm", "[", "matriz1", "]"}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.840027589762135*^9, 3.840027594045055*^9}, 
+   3.840027626905075*^9},
+ CellLabel->"In[8]:=",ExpressionUUID->"9d0896e5-c33b-410c-8c6a-7169a1daf703"]
+}, Closed]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"6449f915-2665-4a0c-a6e2-e9d6ad499c59"],
+
+Cell[TextData[{
+ "H\[AAcute] ",
+ ButtonBox["v\[AAcute]rias fun\[CCedilla]\[OTilde]es",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/guide/MatrixOperations.html"],
+     None},
+  ButtonNote->
+   "https://reference.wolfram.com/language/guide/MatrixOperations.html"],
+ " para lidar com vetores e matrizes. Vamos discutir a seguir algumas delas."
+}], "Text",
+ CellChangeTimes->{{3.8393323479306583`*^9, 3.83933239412267*^9}, 
+   3.8400429537399*^9, {3.840042990257265*^9, 
+   3.8400430062505617`*^9}},ExpressionUUID->"b1b267e2-3d02-4f6e-8b23-\
+bd16992023b6"],
+
+Cell[TextData[{
+ "O produto escalar \[EAcute] invocado pela fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Dot",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Dot.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Dot.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " (ou simplesmente \[OpenCurlyDoubleQuote]",
+ StyleBox[".",
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ "\[CloseCurlyDoubleQuote]):"
+}], "Text",
+ CellChangeTimes->{
+  3.84004302581956*^9, {3.871722342589662*^9, 
+   3.871722342594697*^9}},ExpressionUUID->"478209e2-bced-47ad-abe8-\
+2e67728bf84f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Dot", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"a", ",", "b", ",", "c"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}], "  ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "O", " ", "primeiro", " ", "argumento", " ", "\[EAcute]", " ", "tratado", 
+     " ", "como", " ", "vetor", " ", "linha", " ", "e", " ", "o", " ", 
+     "segundo"}], ",", " ", 
+    RowBox[{"como", " ", "vetor", " ", "coluna"}]}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.840027849417045*^9, 3.8400278826096897`*^9}, {
+   3.8400279659226437`*^9, 3.8400279756599483`*^9}, 
+   3.8720168968036094`*^9},ExpressionUUID->"31baee68-fd01-46af-8157-\
+c1f43edc7531"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"matriz1", ".", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0"}], "}"}]}], "//", "MatrixForm", " "}]], "Input",
+ CellChangeTimes->{{3.840027918614595*^9, 3.840027935364996*^9}, 
+   3.872016900844285*^9},ExpressionUUID->"d1021a6f-5bc4-4ee2-aae6-\
+46377bc03699"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "b"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"c", ",", "d"}], "}"}]}], "}"}], ".", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"e", ",", "f"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"g", ",", "h"}], "}"}]}], "}"}]}], "//", "MatrixForm", 
+  " "}]], "Input",
+ CellChangeTimes->{{3.840028033195804*^9, 3.840028054791812*^9}, 
+   3.8720169033389673`*^9},ExpressionUUID->"68e68152-9f2c-4bad-90c5-\
+d065a340646b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"012330ad-84eb-4a4a-bd43-f72548c2ddfd"],
+
+Cell[TextData[{
+ "A fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Norm",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Norm.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Norm.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " calcula a norma de um vetor (ou de um n\[UAcute]mero complexo):"
+}], "Text",
+ CellChangeTimes->{
+  3.84004335510898*^9, {3.8717223659894667`*^9, 
+   3.871722365994884*^9}},ExpressionUUID->"6c1053a2-07c1-4648-9f95-\
+fcf74fc87483"],
+
+Cell[BoxData[
+ RowBox[{"Norm", "[", 
+  RowBox[{"{", 
+   RowBox[{"x", ",", "y", ",", "z"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.840028158015294*^9, 3.840028190144929*^9}},
+ CellLabel->"",ExpressionUUID->"bfbcff68-872c-4fd2-a5ff-d4cb8a5833df"],
+
+Cell[BoxData[
+ RowBox[{"Norm", "[", 
+  RowBox[{"1", "+", "I"}], "]"}]], "Input",
+ CellChangeTimes->{{3.840028244137817*^9, 3.840028251544327*^9}},
+ CellLabel->"",ExpressionUUID->"1e974069-1cee-4552-a510-34b35a45c7cf"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"ab164155-128a-42dc-ab4a-35e9a337de44"],
+
+Cell[TextData[{
+ "A fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Cross",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Cross.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Cross.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " calcula o produto vetorial de dois vetores:"
+}], "Text",
+ CellChangeTimes->{
+  3.840043384775524*^9, 3.840283260185926*^9, {3.871722388287119*^9, 
+   3.871722388292273*^9}},ExpressionUUID->"9b4e4a6f-79da-4be1-84aa-\
+843af3f62638"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Cross", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", "1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", 
+      RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "]"}], "//", "MatrixForm", 
+  " "}]], "Input",
+ CellChangeTimes->{{3.840028791419982*^9, 3.8400288433001957`*^9}, 
+   3.872016908185072*^9},ExpressionUUID->"bcb69145-8d91-4447-8c0c-\
+7e4046926d0d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"33cf9c85-e456-4482-a1ca-186c865bea40"],
+
+Cell[TextData[{
+ "A fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Det",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Det.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Det.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " calcula o determinante de uma matriz:"
+}], "Text",
+ CellChangeTimes->{{3.839332652436082*^9, 3.8393326668015957`*^9}, 
+   3.840043455571869*^9, {3.8717224000909033`*^9, 
+   3.8717224090926743`*^9}},ExpressionUUID->"2155b105-b887-47d2-aa62-\
+0b268ef35680"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Det", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"a", ",", "b"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"c", ",", "d"}], "}"}]}], "}"}], "]"}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{
+  3.839332675650133*^9, {3.840043470163512*^9, 
+   3.840043493040073*^9}},ExpressionUUID->"d2197a4d-62de-4f66-bc00-\
+7aa4048df260"],
+
+Cell[TextData[{
+ "A fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Tr",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Tr.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Tr.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " calcula o tra\[CCedilla]o de uma matriz:"
+}], "Text",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.8400434807607317`*^9, 3.840043493042099*^9}, {
+  3.871722421104578*^9, 
+  3.871722421110104*^9}},ExpressionUUID->"e37bf496-33fd-444e-9bb7-\
+8ee585b09455"],
+
+Cell[BoxData[
+ RowBox[{"Tr", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"a", ",", "b"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"c", ",", "d"}], "}"}]}], "}"}], "]"}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.84002903080523*^9, 3.840029043751359*^9}},
+ CellLabel->"",ExpressionUUID->"d477955d-0832-4ecc-b683-63814aac2e0e"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"2a87f1cf-cd4a-4847-9f4e-91032c3a3b5a"],
+
+Cell[TextData[{
+ "A fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Transpose",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Transpose.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Transpose.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " calcula a transposta de uma matriz:"
+}], "Text",
+ CellChangeTimes->{{3.839332686681287*^9, 3.8393326992126627`*^9}, 
+   3.8400435030919228`*^9, {3.8717224413716717`*^9, 
+   3.871722441378139*^9}},ExpressionUUID->"7f5d949e-5d36-4ab4-a3cd-\
+a707505901b1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Transpose", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a", ",", "b"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"c", ",", "d"}], "}"}]}], "}"}], "]"}], "//", 
+  "MatrixForm"}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.839332725286643*^9, 3.8393327276764917`*^9}, {
+  3.840043520620187*^9, 
+  3.840043537986124*^9}},ExpressionUUID->"8f7fd91b-0a5e-4871-9be5-\
+c1a6ac599dcb"],
+
+Cell["\<\
+Em aulas futuras discutiremos outras fun\[CCedilla]\[OTilde]es relacionadas a \
+matrizes.\
+\>", "Text",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.8393327606620073`*^9, 3.839332769942075*^9}, {
+  3.840043528404666*^9, 
+  3.8400435379878674`*^9}},ExpressionUUID->"02bed125-63ab-4551-9d1e-\
+ba4d73274291"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"a2ab1752-a682-455f-89b1-85252f27546b"],
+
+Cell[TextData[{
+ "A fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Table",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Table.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Table.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " tamb\[EAcute]m pode produzir uma matriz a partir de uma f\[OAcute]rmula:"
+}], "Text",
+ CellChangeTimes->{{3.839338770297514*^9, 3.839338791458033*^9}, 
+   3.840043687267201*^9, {3.871722459252159*^9, 
+   3.871722472337199*^9}},ExpressionUUID->"df876ce3-0d04-492a-a1d9-\
+2e9ea07903ad"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "^", "m"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"n", "*", "y"}], ")"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"m", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "3"}], "}"}]}], "]"}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.83933879633805*^9, 3.839338803117584*^9}, 
+   3.840043703027412*^9, {3.840613455690637*^9, 3.840613462088181*^9}, {
+   3.840613503301401*^9, 
+   3.840613521172022*^9}},ExpressionUUID->"32153864-4c57-4f1c-85aa-\
+114b8c13e766"],
+
+Cell[BoxData[
+ RowBox[{"MatrixForm", "[", "%", "]"}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.8406135072457952`*^9, 
+  3.840613521173848*^9}},ExpressionUUID->"3fc3b106-484a-483b-be06-\
+15cd49fc93a7"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"f1939ce6-9bc7-4693-8f1f-9eb682a18971"],
+
+Cell[TextData[{
+ "Finalmente, a fun\[CCedilla]\[ATilde]o ",
+ StyleBox[ButtonBox["Transpose",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://reference.wolfram.com/language/ref/Transpose.html"], None},
+  ButtonNote->"https://reference.wolfram.com/language/ref/Transpose.html"],
+  FontFamily->"Source Code Pro",
+  FontWeight->"Regular"],
+ " pode ser utilizada para transformar duas listas (por exemplo, uma de \
+temperaturas, outra de comprimentos de uma barra) em uma lista de pares \
+ordenados."
+}], "Text",
+ CellChangeTimes->{{3.839332921751677*^9, 3.839332945499341*^9}, 
+   3.840043719441822*^9, {3.840043753619248*^9, 3.840043768311055*^9}, 
+   3.840043840863562*^9, {3.8717224975229263`*^9, 
+   3.871722497528475*^9}},ExpressionUUID->"e77e57cb-390f-4776-aa99-\
+90246c8367a6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"lista8x", "=", 
+    RowBox[{"{", 
+     RowBox[{"25", ",", "26", ",", "27", ",", "28"}], "}"}]}], ";"}], 
+  " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"lista8y", "=", 
+   RowBox[{"{", 
+    RowBox[{"29.9", ",", "30.5", ",", "31.1", ",", "31.5"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"lista8xy", "=", 
+  RowBox[{"{", 
+   RowBox[{"lista8x", ",", "lista8y"}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"lista8", "=", 
+  RowBox[{"Transpose", "[", "lista8xy", "]"}]}]}], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.840016068743373*^9, 3.840016112704496*^9}, {
+   3.8400161558139544`*^9, 3.840016175289219*^9}, {3.840030681216241*^9, 
+   3.840030698684696*^9}, 3.840030851078261*^9, 
+   3.872016914122641*^9},ExpressionUUID->"c0df702a-0b1b-493c-bb06-\
+dcc729e8d4f0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ListPlot", "[", "lista8", "]"}], " "}]], "Input",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.},
+ CellChangeTimes->{{3.840016114598439*^9, 3.840016120224978*^9}, 
+   3.8400308510793467`*^9, 
+   3.872016916722026*^9},ExpressionUUID->"89b17141-5590-4d37-9aee-\
+28fef6778552"]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"32be91fb-777d-400b-86fa-9a049cede895"],
+
+Cell["Exerc\[IAcute]cios no E-disciplinas", "Section",
+ CellChangeTimes->{{3.839333537446044*^9, 3.839333542350568*^9}, {
+  3.9017974233112993`*^9, 
+  3.9017974292780237`*^9}},ExpressionUUID->"22ca6e40-5203-4405-ab21-\
+c6777f1f153d"]
+}, Open  ]]
+},
+ScreenStyleEnvironment->"Slideshow Working",
+CellGrouping->Manual,
+WindowSize->{808.5, 735.75},
+WindowMargins->{{Automatic, 278.25}, {Automatic, 14.25}},
+TaggingRules->{
+ "PresenterSettings" -> {
+   "ShowNavigationBar" -> False, 
+    "SlideBreakStyles" -> {"Title", "Chapter", "Section"}, "ShowSlideBreaks" -> 
+    True, "Theme" -> {
+     "ThemeName" -> "Default", "FontSetName" -> "Default", "ColorSetName" -> 
+      "Default"}, "WindowSize" -> {808, 911}, 
+    "WindowMargins" -> {{1063, 49}, {73, 51}}, "Dialogs" -> {}, 
+    "UserModifications" -> {{
+      "Text", CellMargins -> 
+       Dynamic[{{
+          0.185 FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}], 
+           0.030000000000000002` 
+           FrontEnd`AbsoluteCurrentValue[{WindowSize, 1}]}, {
+          0.0124074 FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}], 0.0124074 
+           FrontEnd`AbsoluteCurrentValue[{WindowSize, 2}]}}]}}}, 
+  "TryRealOnly" -> False},
+CellContext->Notebook,
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (June 3, 2023)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"PresenterTools"}, "Default.nb", CharacterEncoding -> 
+       "UTF-8"]]]}, Visible -> False, FrontEndVersion -> 
+  "13.3 for Microsoft Windows (64-bit) (June 3, 2023)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"],
+ExpressionUUID->"63f77470-a211-432c-9718-b6177fd49bbe"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "SlideShowHeader"->{
+  Cell[580, 22, 136, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"ae861ed8-5fa1-4088-84fd-2651cc7b368a",
+   CellTags->"SlideShowHeader"],
+  Cell[1680, 49, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"ee3ea2a1-973b-4e9a-a704-0d8a3c30d1be",
+   CellTags->"SlideShowHeader"],
+  Cell[4784, 132, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"40542b3b-2488-406e-bc0d-1c1e5726d1cc",
+   CellTags->"SlideShowHeader"],
+  Cell[7378, 209, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"ab866131-6854-4e34-a1df-4a9cef6819a8",
+   CellTags->"SlideShowHeader"],
+  Cell[9249, 261, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"a9293dc0-a2a2-41d7-a17f-f7683ae167d3",
+   CellTags->"SlideShowHeader"],
+  Cell[11335, 324, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"04dc39ac-49b4-4583-b876-d13d47c8024d",
+   CellTags->"SlideShowHeader"],
+  Cell[13787, 398, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"53cf55d8-a27b-4a57-afc5-7769ff8f849c",
+   CellTags->"SlideShowHeader"],
+  Cell[17319, 507, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"f28f5531-acc2-4171-83c4-c62c7c9a4661",
+   CellTags->"SlideShowHeader"],
+  Cell[18827, 550, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"9711ac4c-53d8-4ca4-b78f-fa198caf9c15",
+   CellTags->"SlideShowHeader"],
+  Cell[22167, 645, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"f1ea6945-699f-482b-8fd0-06e69f1653cb",
+   CellTags->"SlideShowHeader"],
+  Cell[25739, 752, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"1693437b-1d55-45b0-92c8-f9618c540d96",
+   CellTags->"SlideShowHeader"],
+  Cell[28113, 822, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"d0653087-e6fc-4117-98fa-618b3d35e3ba",
+   CellTags->"SlideShowHeader"],
+  Cell[29453, 856, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"b9b3882f-e4b1-47bf-b75d-ae3241466e3b",
+   CellTags->"SlideShowHeader"],
+  Cell[32187, 934, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"f7a40f71-7825-4488-8115-209fcc91b4c0",
+   CellTags->"SlideShowHeader"],
+  Cell[38511, 1095, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"e63b20c4-1ff6-4337-8aee-1cac34c53f10",
+   CellTags->"SlideShowHeader"],
+  Cell[43889, 1248, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"7f136dcc-e255-42fb-a080-115e12cbce78",
+   CellTags->"SlideShowHeader"],
+  Cell[45057, 1283, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"0a89f2e5-0f75-4692-a6f9-bf3cb9efa58a",
+   CellTags->"SlideShowHeader"],
+  Cell[47458, 1354, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"1a320414-3134-4083-b988-ba3ab9227284",
+   CellTags->"SlideShowHeader"],
+  Cell[49518, 1417, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"f5df252d-5e49-4d42-8fb6-aa7a8acf2b21",
+   CellTags->"SlideShowHeader"],
+  Cell[52590, 1508, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"6449f915-2665-4a0c-a6e2-e9d6ad499c59",
+   CellTags->"SlideShowHeader"],
+  Cell[55595, 1600, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"012330ad-84eb-4a4a-bd43-f72548c2ddfd",
+   CellTags->"SlideShowHeader"],
+  Cell[56783, 1636, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"ab164155-128a-42dc-ab4a-35e9a337de44",
+   CellTags->"SlideShowHeader"],
+  Cell[57922, 1673, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"33cf9c85-e456-4482-a1ca-186c865bea40",
+   CellTags->"SlideShowHeader"],
+  Cell[60111, 1742, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"2a87f1cf-cd4a-4847-9f4e-91032c3a3b5a",
+   CellTags->"SlideShowHeader"],
+  Cell[61736, 1794, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"a2ab1752-a682-455f-89b1-85252f27546b",
+   CellTags->"SlideShowHeader"],
+  Cell[63386, 1845, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"f1939ce6-9bc7-4693-8f1f-9eb682a18971",
+   CellTags->"SlideShowHeader"],
+  Cell[65567, 1907, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"32be91fb-777d-400b-86fa-9a049cede895",
+   CellTags->"SlideShowHeader"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"SlideShowHeader", 67475, 1956}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 136, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"ae861ed8-5fa1-4088-84fd-2651cc7b368a",
+ CellTags->"SlideShowHeader"],
+Cell[719, 26, 496, 8, 275, "Title",ExpressionUUID->"92508663-47f1-4deb-9615-d2c271e8e453"],
+Cell[1218, 36, 425, 8, 176, "Subtitle",ExpressionUUID->"14f8f51b-58e9-4033-aea1-fd611ac95bb9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1680, 49, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"ee3ea2a1-973b-4e9a-a704-0d8a3c30d1be",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[1827, 55, 322, 6, 104, "Section",ExpressionUUID->"7da6da63-6378-4f26-b58d-d42a7250afa4"],
+Cell[2152, 63, 765, 14, 165, "Text",ExpressionUUID->"3b730a40-c305-44bd-95b8-df5440115120"],
+Cell[2920, 79, 462, 9, 41, "Input",ExpressionUUID->"a9b1250e-20d4-4d04-bb61-89aa77db592b"],
+Cell[3385, 90, 259, 6, 41, "Input",ExpressionUUID->"aedb5a5b-0854-422d-9281-f487a24fc1c9"],
+Cell[CellGroupData[{
+Cell[3669, 100, 450, 9, 41, "Input",ExpressionUUID->"1e47d30d-1932-4b27-8f7c-b4aaac1204b9",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[4122, 111, 601, 14, 157, "Text",ExpressionUUID->"d8dab926-6edc-47d1-bc3b-ea9c86c1ff65",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}]
+}, Closed]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4784, 132, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"40542b3b-2488-406e-bc0d-1c1e5726d1cc",
+ CellTags->"SlideShowHeader"],
+Cell[4909, 136, 552, 14, 45, "Text",ExpressionUUID->"4a7d6715-a466-4e21-8adc-bdb5216bcdcb"],
+Cell[CellGroupData[{
+Cell[5486, 154, 358, 8, 58, "Input",ExpressionUUID->"db1e2bef-52ed-48a0-8e22-56eb81f795df",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[5847, 164, 1122, 29, 75, "Text",ExpressionUUID->"1a90e685-c97d-4c8e-83d6-53be1193f576",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[6972, 195, 357, 8, 58, "Input",ExpressionUUID->"7b192a28-e455-45c2-a6b8-f81a2f78b113",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7378, 209, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"ab866131-6854-4e34-a1df-4a9cef6819a8",
+ CellTags->"SlideShowHeader"],
+Cell[7503, 213, 874, 19, 75, "Text",ExpressionUUID->"f302a702-6fbf-4a7c-a457-bc03af4e051e"],
+Cell[8380, 234, 268, 6, 58, "Input",ExpressionUUID->"4729a16b-4ccf-4eac-a589-428be96921c2"],
+Cell[8651, 242, 268, 6, 58, "Input",ExpressionUUID->"4aeb8097-a488-4160-be73-7743f9cf9dd8"],
+Cell[8922, 250, 290, 6, 58, "Input",ExpressionUUID->"1cf31aaa-bb35-49c2-a6d5-ec583bd898da"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9249, 261, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"a9293dc0-a2a2-41d7-a17f-f7683ae167d3",
+ CellTags->"SlideShowHeader"],
+Cell[9374, 265, 259, 6, 45, "Text",ExpressionUUID->"d9dc2b1f-4946-4194-956e-e065020159d4"],
+Cell[CellGroupData[{
+Cell[9658, 275, 376, 9, 41, "Input",ExpressionUUID->"673f3060-48f0-40fa-8419-21ae6e02d042",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[10037, 286, 956, 25, 109, "Text",ExpressionUUID->"35136916-8a3a-47d0-aecb-aa522a644e23",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[10996, 313, 290, 5, 60, "Input",ExpressionUUID->"6a7cc8f8-6918-459a-9d4f-863ed1f46c62",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11335, 324, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"04dc39ac-49b4-4583-b876-d13d47c8024d",
+ CellTags->"SlideShowHeader"],
+Cell[11460, 328, 584, 14, 45, "Text",ExpressionUUID->"7b8928b2-a6f1-4b41-a057-6edb6599b9f4"],
+Cell[12047, 344, 397, 11, 41, "Input",ExpressionUUID->"c4f246cf-d829-4832-8035-9ea5a3b465b2",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[CellGroupData[{
+Cell[12469, 359, 639, 13, 58, "Input",ExpressionUUID->"a1176aa9-e8aa-4b34-9b24-2edb83725d48",
+ CellGroupingRules->{"GroupTogetherGrouping", 10001.}],
+Cell[13111, 374, 321, 10, 45, "Text",ExpressionUUID->"e4999ce8-8ca1-4cc2-9179-ee4bae12ee61",
+ CellGroupingRules->{"GroupTogetherGrouping", 10001.}],
+Cell[13435, 386, 303, 6, 41, "Input",ExpressionUUID->"48b7b49f-a438-4831-aa4a-28f4059663b3",
+ CellGroupingRules->{"GroupTogetherGrouping", 10001.}]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13787, 398, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"53cf55d8-a27b-4a57-afc5-7769ff8f849c",
+ CellTags->"SlideShowHeader"],
+Cell[13912, 402, 520, 14, 45, "Text",ExpressionUUID->"1774fd2a-9936-4ef6-a0e6-4c058641cc19"],
+Cell[CellGroupData[{
+Cell[14457, 420, 817, 20, 83, "Input",ExpressionUUID->"e80fb665-2314-44b8-977c-ae800760a936",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[15277, 442, 682, 19, 66, "ItemParagraph",ExpressionUUID->"c419bb64-6a01-4660-88dd-774338f5d38d",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[15962, 463, 456, 15, 45, "Text",ExpressionUUID->"f6c7261b-5f56-45bc-8054-fbe257e71282",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[16421, 480, 240, 4, 41, "Input",ExpressionUUID->"5b33e337-b4ea-4d2f-9b84-0de44021164b",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[16664, 486, 281, 4, 45, "Text",ExpressionUUID->"d088e9c0-c026-49c2-bbeb-73624915dc02",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[16948, 492, 322, 9, 58, "Input",ExpressionUUID->"01523872-cece-40a2-b665-190f4deace24",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17319, 507, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"f28f5531-acc2-4171-83c4-c62c7c9a4661",
+ CellTags->"SlideShowHeader"],
+Cell[17444, 511, 1029, 25, 105, "Text",ExpressionUUID->"8c455970-6cb0-42ab-a48a-e45903e5d513"],
+Cell[18476, 538, 314, 7, 58, "Input",ExpressionUUID->"6852cd38-8c1a-4808-b78b-48b73db2d276"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18827, 550, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"9711ac4c-53d8-4ca4-b78f-fa198caf9c15",
+ CellTags->"SlideShowHeader"],
+Cell[18952, 554, 823, 19, 75, "Text",ExpressionUUID->"f55b8e52-9d74-4c44-b99b-65f8fce977cc"],
+Cell[19778, 575, 376, 10, 41, "Input",ExpressionUUID->"535816cf-11d5-4dca-aea3-e51cec9e9621"],
+Cell[CellGroupData[{
+Cell[20179, 589, 582, 14, 41, "Input",ExpressionUUID->"8eff1f02-fac8-4fa1-963e-e2cfc5fcd49f",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[20764, 605, 823, 18, 70, "Input",ExpressionUUID->"54917961-f668-4daa-a0f6-757035f4e6dd",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[21590, 625, 528, 14, 44, "Input",ExpressionUUID->"269c50a1-0381-40c6-a08a-1c1ef4f1b4fc",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22167, 645, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"f1ea6945-699f-482b-8fd0-06e69f1653cb",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[22314, 651, 332, 7, 105, "Text",ExpressionUUID->"8978271e-60b4-4ccb-9eb2-e76cf32b502a"],
+Cell[CellGroupData[{
+Cell[22671, 662, 641, 17, 41, "Input",ExpressionUUID->"e6096ff5-ad18-48a9-a3c2-ebefe4e2cd67",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[23315, 681, 1162, 28, 195, "Text",ExpressionUUID->"1a13b171-d51c-46d0-9ed7-dd7b8d749028",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[CellGroupData[{
+Cell[24502, 713, 287, 7, 41, "Input",ExpressionUUID->"3437bb4f-4736-459d-b702-e7c58737e48f",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[24792, 722, 657, 16, 75, "Text",ExpressionUUID->"54cfbb09-bfc2-42a8-9fb7-675ce2ae9570"],
+Cell[25452, 740, 236, 6, 58, "Input",ExpressionUUID->"a27bd5fc-8f08-4943-963e-a23dc099ea37"]
+}, Closed]]
+}, Closed]]
+}, Open  ]]
+}, Open  ]],
+Cell[25739, 752, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"1693437b-1d55-45b0-92c8-f9618c540d96",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[25886, 758, 617, 15, 100, "Text",ExpressionUUID->"92640c85-4011-4e1a-8a74-069451750911"],
+Cell[CellGroupData[{
+Cell[26528, 777, 292, 5, 58, "Input",ExpressionUUID->"7e0670d4-6a24-466e-8900-ab37fc929f95",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[26823, 784, 800, 19, 105, "Text",ExpressionUUID->"9d257a98-cb04-47dd-b295-11fbaf291911"],
+Cell[27626, 805, 199, 4, 41, "Input",ExpressionUUID->"9fdbbf8e-b968-4863-99e0-a3dc9f0a3560"],
+Cell[27828, 811, 236, 5, 58, "Input",ExpressionUUID->"17a27e60-259a-48a4-9733-443119421a02"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28113, 822, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"d0653087-e6fc-4117-98fa-618b3d35e3ba",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[28260, 828, 532, 9, 104, "Section",ExpressionUUID->"a6bca3fb-c161-4f12-a2a7-035c628e3fe4"],
+Cell[28795, 839, 609, 11, 135, "Text",ExpressionUUID->"d8defd24-687d-4dd2-bb21-118c0ff8990b"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29453, 856, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"b9b3882f-e4b1-47bf-b75d-ae3241466e3b",
+ CellTags->"SlideShowHeader"],
+Cell[29578, 860, 568, 14, 45, "Text",ExpressionUUID->"5e21bc77-62ba-4aba-aaee-59922f2ca951"],
+Cell[30149, 876, 439, 9, 58, "Input",ExpressionUUID->"b4e43561-3446-4ba9-9b74-2a031ffff604"],
+Cell[30591, 887, 417, 9, 58, "Input",ExpressionUUID->"5d2f10fc-b52b-4329-9741-e46c7195d60e"],
+Cell[31011, 898, 588, 16, 83, "Input",ExpressionUUID->"d24c3873-0043-41da-a3d7-bbc349be5577"],
+Cell[31602, 916, 548, 13, 83, "Input",ExpressionUUID->"d798f8b7-7364-4349-86d3-c1e7750f393d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32187, 934, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"f7a40f71-7825-4488-8115-209fcc91b4c0",
+ CellTags->"SlideShowHeader"],
+Cell[32312, 938, 705, 14, 135, "Text",ExpressionUUID->"f5412697-fbe8-45f0-b8f6-f8bb5e1b01e5"],
+Cell[33020, 954, 605, 14, 75, "Text",ExpressionUUID->"e0ffc2f9-651b-44fb-8797-f11184a03c6b"],
+Cell[CellGroupData[{
+Cell[33650, 972, 1073, 24, 105, "Input",ExpressionUUID->"d485576f-0930-4518-b1e1-bd1be85bb11d",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[CellGroupData[{
+Cell[34748, 1000, 1204, 26, 105, "Input",ExpressionUUID->"f9fe9daf-9fef-428c-bc9b-2f51b00736ac",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[CellGroupData[{
+Cell[35977, 1030, 1430, 31, 128, "Input",ExpressionUUID->"7d7accac-4b8f-48ee-a72f-3b96b18c4a5c",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[37410, 1063, 1028, 24, 105, "Input",ExpressionUUID->"495b5733-8723-4097-a1bc-980e5866c261",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}]
+}, Closed]]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38511, 1095, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"e63b20c4-1ff6-4337-8aee-1cac34c53f10",
+ CellTags->"SlideShowHeader"],
+Cell[38636, 1099, 1045, 23, 165, "Text",ExpressionUUID->"4885ce9f-7b8e-4c5d-abc0-d7bbb2c37f97"],
+Cell[39684, 1124, 420, 12, 64, "Input",ExpressionUUID->"68eb5bb4-a227-4dce-a91d-4e59b353be92"],
+Cell[CellGroupData[{
+Cell[40129, 1140, 880, 22, 83, "Input",ExpressionUUID->"e12d619b-9cff-40cb-ab74-00a6bb22e38f",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[41012, 1164, 1468, 39, 122, "ItemParagraph",ExpressionUUID->"edb5a615-d88d-4835-b166-0df77fe0d0ba",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[CellGroupData[{
+Cell[42505, 1207, 508, 12, 58, "Input",ExpressionUUID->"b640c837-0a4e-4d4a-be09-ece8ab19275a",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[43016, 1221, 812, 20, 135, "Text",ExpressionUUID->"53f4b14d-d1da-4b91-b31f-ec7b538eec24"]
+}, Closed]]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43889, 1248, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"7f136dcc-e255-42fb-a080-115e12cbce78",
+ CellTags->"SlideShowHeader"],
+Cell[44014, 1252, 611, 15, 75, "Text",ExpressionUUID->"58b37b08-3d11-4358-9dca-88513d33d6ce"],
+Cell[44628, 1269, 392, 9, 58, "Input",ExpressionUUID->"53037791-fda6-402d-b6d4-703b455f10c6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45057, 1283, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"0a89f2e5-0f75-4692-a6f9-bf3cb9efa58a",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[45204, 1289, 424, 7, 104, "Section",ExpressionUUID->"12a70bd9-5934-43e6-bf39-c62eaac3650c"],
+Cell[45631, 1298, 520, 9, 135, "Text",ExpressionUUID->"2f02ce05-f03d-45a2-bcf6-fad8ed76da45"],
+Cell[46154, 1309, 367, 10, 41, "Input",ExpressionUUID->"2b2a3f7a-6d5b-4362-a27d-fa5545954bcb"],
+Cell[46524, 1321, 366, 10, 41, "Input",ExpressionUUID->"5c1e4508-2dd4-42fc-b251-4aac743a1df3"],
+Cell[46893, 1333, 516, 15, 58, "Input",ExpressionUUID->"1036f4bc-c54c-4cf1-83df-d2fd8973f0ea"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47458, 1354, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"1a320414-3134-4083-b988-ba3ab9227284",
+ CellTags->"SlideShowHeader"],
+Cell[47583, 1358, 517, 12, 75, "Text",ExpressionUUID->"d079dabf-209c-4860-990a-ba27dae614a7"],
+Cell[CellGroupData[{
+Cell[48125, 1374, 315, 8, 41, "Input",ExpressionUUID->"5efb9a28-4c6e-44a4-a118-86d2add3f08c",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[48443, 1384, 662, 16, 75, "Text",ExpressionUUID->"43298964-dfbd-404e-b49b-fde5d50b2f3f",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[49108, 1402, 361, 9, 58, "Input",ExpressionUUID->"a0da835c-cf72-45a7-9952-5ab22f92d245",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49518, 1417, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"f5df252d-5e49-4d42-8fb6-aa7a8acf2b21",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[49665, 1423, 185, 3, 104, "Section",ExpressionUUID->"f78330d5-f5c5-4e89-88d9-d7f964eb0afe"],
+Cell[49853, 1428, 296, 6, 75, "Text",ExpressionUUID->"545eecb9-86d8-43e5-90c2-de7056d59eab"],
+Cell[50152, 1436, 318, 8, 41, "Input",ExpressionUUID->"2a1b318f-5bde-4931-a1c4-18d02e675e41"],
+Cell[50473, 1446, 326, 7, 75, "Text",ExpressionUUID->"a2371891-c298-4c8a-a7e3-211142174686"],
+Cell[CellGroupData[{
+Cell[50824, 1457, 462, 12, 41, "Input",ExpressionUUID->"512b9b51-f125-45e3-8493-0f1222b2cf08",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[51289, 1471, 647, 16, 79, "Text",ExpressionUUID->"6527b7a4-71a6-4786-84e5-2c2ec428ed4d",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[51939, 1489, 293, 5, 60, "Input",ExpressionUUID->"fa0f04b8-90e1-4eff-8c3a-2ab40fe1ef71",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[52235, 1496, 294, 5, 60, "Input",ExpressionUUID->"9d0896e5-c33b-410c-8c6a-7169a1daf703",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}]
+}, Closed]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52590, 1508, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"6449f915-2665-4a0c-a6e2-e9d6ad499c59",
+ CellTags->"SlideShowHeader"],
+Cell[52715, 1512, 598, 14, 75, "Text",ExpressionUUID->"b1b267e2-3d02-4f6e-8b23-bd16992023b6"],
+Cell[53316, 1528, 669, 18, 45, "Text",ExpressionUUID->"478209e2-bced-47ad-abe8-2e67728bf84f"],
+Cell[53988, 1548, 722, 18, 105, "Input",ExpressionUUID->"31baee68-fd01-46af-8157-c1f43edc7531"],
+Cell[54713, 1568, 291, 7, 58, "Input",ExpressionUUID->"d1021a6f-5bc4-4ee2-aae6-46377bc03699"],
+Cell[55007, 1577, 551, 18, 58, "Input",ExpressionUUID->"68e68152-9f2c-4bad-90c5-d065a340646b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55595, 1600, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"012330ad-84eb-4a4a-bd43-f72548c2ddfd",
+ CellTags->"SlideShowHeader"],
+Cell[55720, 1604, 552, 14, 75, "Text",ExpressionUUID->"6c1053a2-07c1-4648-9f95-fcf74fc87483"],
+Cell[56275, 1620, 251, 5, 58, "Input",ExpressionUUID->"bfbcff68-872c-4fd2-a5ff-d4cb8a5833df"],
+Cell[56529, 1627, 217, 4, 58, "Input",ExpressionUUID->"1e974069-1cee-4552-a510-34b35a45c7cf"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56783, 1636, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"ab164155-128a-42dc-ab4a-35e9a337de44",
+ CellTags->"SlideShowHeader"],
+Cell[56908, 1640, 556, 14, 45, "Text",ExpressionUUID->"9b4e4a6f-79da-4be1-84aa-843af3f62638"],
+Cell[57467, 1656, 418, 12, 58, "Input",ExpressionUUID->"bcb69145-8d91-4447-8c0c-7e4046926d0d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[57922, 1673, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"33cf9c85-e456-4482-a1ca-186c865bea40",
+ CellTags->"SlideShowHeader"],
+Cell[58047, 1677, 575, 14, 45, "Text",ExpressionUUID->"2155b105-b887-47d2-aa62-0b268ef35680"],
+Cell[CellGroupData[{
+Cell[58647, 1695, 412, 12, 58, "Input",ExpressionUUID->"d2197a4d-62de-4f66-bc00-7aa4048df260",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[59062, 1709, 602, 15, 49, "Text",ExpressionUUID->"e37bf496-33fd-444e-9bb7-8ee585b09455",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[59667, 1726, 395, 10, 60, "Input",ExpressionUUID->"d477955d-0832-4ecc-b683-63814aac2e0e",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[60111, 1742, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"2a87f1cf-cd4a-4847-9f4e-91032c3a3b5a",
+ CellTags->"SlideShowHeader"],
+Cell[60236, 1746, 591, 14, 45, "Text",ExpressionUUID->"7f5d949e-5d36-4ab4-a3cd-a707505901b1"],
+Cell[CellGroupData[{
+Cell[60852, 1764, 485, 14, 58, "Input",ExpressionUUID->"8f7fd91b-0a5e-4871-9be5-c1a6ac599dcb",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[61340, 1780, 347, 8, 49, "Text",ExpressionUUID->"02bed125-63ab-4551-9d1e-ba4d73274291",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[61736, 1794, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"a2ab1752-a682-455f-89b1-85252f27546b",
+ CellTags->"SlideShowHeader"],
+Cell[61861, 1798, 610, 14, 75, "Text",ExpressionUUID->"df876ce3-0d04-492a-a1d9-2e9ea07903ad"],
+Cell[CellGroupData[{
+Cell[62496, 1816, 592, 16, 58, "Input",ExpressionUUID->"32153864-4c57-4f1c-85aa-114b8c13e766",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[63091, 1834, 246, 5, 60, "Input",ExpressionUUID->"3fc3b106-484a-483b-be06-15cd49fc93a7",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[63386, 1845, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"f1939ce6-9bc7-4693-8f1f-9eb682a18971",
+ CellTags->"SlideShowHeader"],
+Cell[63511, 1849, 791, 17, 105, "Text",ExpressionUUID->"e77e57cb-390f-4776-aa99-90246c8367a6"],
+Cell[CellGroupData[{
+Cell[64327, 1870, 872, 22, 126, "Input",ExpressionUUID->"c0df702a-0b1b-493c-bb06-dcc729e8d4f0",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}],
+Cell[65202, 1894, 316, 7, 58, "Input",ExpressionUUID->"89b17141-5590-4d37-9aee-28fef6778552",
+ CellGroupingRules->{"GroupTogetherGrouping", 10000.}]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[65567, 1907, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"32be91fb-777d-400b-86fa-9a049cede895",
+ CellTags->"SlideShowHeader"],
+Cell[65692, 1911, 233, 4, 104, "Section",ExpressionUUID->"22ca6e40-5203-4405-ab21-c6777f1f153d"]
+}, Open  ]]
+}
+]
+*)
+
